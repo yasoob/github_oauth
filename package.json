@@ -1,6 +1,6 @@
 {
-  "name": "GithubOAuth",
-  "description": "NodeJS app for authenticating into Github.",
+  "name": "GitHubOAuth",
+  "description": "A simple NodeJS app for authenticating to Github using OAuth.",
   "dependencies": {
     "httpdispatcher": "0.4.0",
     "request": "*"
