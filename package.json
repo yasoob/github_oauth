@@ -1,0 +1,8 @@
+{
+  "name": "GithubOAuth",
+  "description": "NodeJS app for authenticating into Github.",
+  "dependencies": {
+    "httpdispatcher": "0.4.0",
+    "request": "*"
+  }
+}
