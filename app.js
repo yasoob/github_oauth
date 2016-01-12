@@ -47,9 +47,6 @@ dispatcher.onGet("/login", function(req, res) {
 //Get 'em callbacks!
 dispatcher.onGet("/callback", function(req, res) {
   var query = url.parse(req.url, true).query;
-  //console.log(query.state);
-  //console.log(GitHubConfig.state);
-  //console.log(query.state == GitHubConfig.state);
   if (query.state == GitHubConfig.state){
     //No XSS Attack!
     payload = {
@@ -82,8 +79,6 @@ var authorized = function(res, token){
         if (!error && response.statusCode == 200) {
             body = JSON.parse(body);
             var user = body.login;
-            //checkMembership(user, token, res);
-            //res.setHeader('Content-Type', 'application/json');
             res.end("<!DOCTYPE html><html><body>"+
             	"<style>.key{font-size:18px; color:blue;font-weight:bold;}.string,.number,.boolean,.null{font-size:18px;}</style>"+
             	"<pre>"+syntaxHighlight(JSON.stringify(body,null,2))+
@@ -100,9 +95,7 @@ var authorized = function(res, token){
 //Lets use our dispatcher
 function handleRequest(request, response){
     try {
-        //log the request on console
         console.log(request.url);
-        //Disptach
         dispatcher.dispatch(request, response);
     } catch(err) {
         console.log(err);
